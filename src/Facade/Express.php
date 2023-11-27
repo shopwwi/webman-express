@@ -17,7 +17,7 @@ namespace Shopwwi\WebmanExpress\Facade;
 /**
  * @see \Shopwwi\WebmanExpress\Express
  * @mixin \Shopwwi\WebmanExpress\Express
- * @method make($adapterName = null) static 设置选定器
+ * @method make($adapterName = null,$config = null) static 设置选定器
  * @method track($tracking_code, $shipping_code, array $additional = []) static 查询快递
  */
 class Express

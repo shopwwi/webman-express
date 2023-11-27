@@ -29,19 +29,24 @@ class Express
      * @return Express
      * @throws InvalidArgumentException
      */
-    public function make($adapterName = null)
+    public function make($adapterName = null,$config = null)
     {
-        $options = \config('plugin.shopwwi.express.app', [
-            'default' => 'kuaidi100',
-            'holder' => [
-                'kuaidi100' => [
-                    'driver' => KuaiDi100AdapterFactory::class,
-                    'api_url' => 'https://poll.kuaidi100.com/poll/query.do',
-                    'app_id' => '',
-                    'app_key' => ''
+        if($config !=null){
+            $options = $config;
+        }else{
+            $options = \config('plugin.shopwwi.express.app', [
+                'default' => 'kuaidi100',
+                'holder' => [
+                    'kuaidi100' => [
+                        'driver' => KuaiDi100AdapterFactory::class,
+                        'api_url' => 'https://poll.kuaidi100.com/poll/query.do',
+                        'app_id' => '',
+                        'app_key' => ''
+                    ],
                 ],
-            ],
-        ]);
+            ]);
+        }
+
         if($adapterName != null){
             $this->type = $adapterName;
         }else{
