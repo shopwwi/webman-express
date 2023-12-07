@@ -47,8 +47,8 @@ $express = Express::make('kuaidi100');
 use Shopwwi\WebmanExpress\Facade\Express;
 
 $express = Express::make(); //默认选定器
-// $tracking_code 快递公司编码
-// $shipping_code 物流单号
+// $tracking_code 快递单号
+// $shipping_code 物流公司编码
 // $additional 扩展参数 详见下面说明
 $express = $express->track($tracking_code, $shipping_code,$additional = [])
 
@@ -72,23 +72,24 @@ $express = $express->track($tracking_code, $shipping_code,$additional = [])
 
 4.返回结果说明(对各站进行了统一)
 
-| 参数名称          |类型| 说明       |
-|---------------|-----|----------|
-| message       | String | 消息体，请忽略  | 
-| status        | String | 通讯状态，请忽略 |
-| exp_logo      |String| 快递公司logo |
-| exp_name      |String| 快递公司名称   |
-| exp_ship_sn   |String| 快递公司编码   |
-| exp_ship_code |String| 快递单号     |
-| exp_tel       |String| 快递公司电话   |
-| exp_state     |String| 当前快递状态   |
-| route_info    | Array | 快递途径明细   |
-| exp_list      | Array | 快递明细列表   |
-| └ time        | String | 时间，原始格式  |
-| └ context     | String | 内容       |
-| └ status      | String | 本数据元对应的物流状态名称或者高级状态名称 |
-| └ status_code | String | 本数据元对应的高级物流状态值 |
-| └ area_name | String | 本数据元对应的行政区域的名称 |
-| └ area_code | String | 本数据元对应的行政区域的编码 |
-| └ location | String | 本数据元对应的行政区域经纬度 |
-| └ area_pinyin | String | 本数据元对应的行政区域拼音 |
+| 参数名称            |类型| 说明       |
+|-----------------|-----|----------|
+| message         | String | 消息体，请忽略  | 
+| status          | String | 通讯状态，请忽略 |
+| exp_logo        |String| 快递公司logo |
+| exp_name        |String| 快递公司名称   |
+| exp_ship_sn     |String| 快递公司编码   |
+| exp_ship_code   |String| 快递单号     |
+| exp_tel         |String| 快递公司电话   |
+| exp_status      |String| 当前快递状态   |
+| exp_status_text |String| 当前快递状态   |
+| route_info      | Array | 快递途径明细   |
+| exp_list        | Array | 快递明细列表   |
+| └ time          | String | 时间，原始格式  |
+| └ context       | String | 内容       |
+| └ status        | String | 本数据元对应的物流状态名称或者高级状态名称 |
+| └ status_code   | String | 本数据元对应的高级物流状态值 |
+| └ area_name     | String | 本数据元对应的行政区域的名称 |
+| └ area_code     | String | 本数据元对应的行政区域的编码 |
+| └ location      | String | 本数据元对应的行政区域经纬度 |
+| └ area_pinyin   | String | 本数据元对应的行政区域拼音 |
